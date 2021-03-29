@@ -33,8 +33,8 @@ Configuring a virtual host in Apache
 ----------------------
 ```
 <VirtualHost *:80>
-ServerName api.example.com
-DocumentRoot /var/www/html/example.com/api/
+ServerName example.com
+DocumentRoot /var/www/html/example.com/api/web
 </VirtualHost>
 ```
 Authorization
