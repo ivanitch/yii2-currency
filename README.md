@@ -49,3 +49,15 @@ Profile
 ```
 curl -H "Authorization: Bearer <token>" http://api.example.com/profile
 ```
+Get all currencies
+```
+curl -H "Authorization: Bearer <token>" http://api.example.com/currencies
+```
+Currency rate by ID
+```
+curl -H "Authorization: Bearer <token>" http://api.example.com/currencies/11
+```
+Updating currencies from the console
+```
+php /var/project/yii currency/update
+```
