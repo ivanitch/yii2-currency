@@ -61,3 +61,8 @@ Updating currencies from the console
 ```
 php /var/project/yii currency/update
 ```
+Updating Cron Data
+```
+31 13 * * * php /var/project/yii currency/update
+```
+Data is automatically updated at 13.31 (Moscow time)
