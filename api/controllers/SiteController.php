@@ -8,6 +8,11 @@ use api\core\forms\LoginForm;
 
 class SiteController extends Controller
 {
+    public function actionIndex(): string
+    {
+        return 'api';
+    }
+
     public function actionLogin()
     {
         $model = new LoginForm();

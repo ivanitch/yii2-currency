@@ -9,7 +9,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
         'log',
-        'common\bootstrap\SetUp'
+        \common\bootstrap\SetUp::class
     ],
     'controllerNamespace' => 'console\controllers',
     'aliases' => [

@@ -30,3 +30,5 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
+
+/tests/api.suite.yml
