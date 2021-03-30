@@ -66,3 +66,14 @@ Updating Cron Data
 31 13 * * * php /var/project/yii currency/update
 ```
 Data is automatically updated at 13.31 (Moscow time)
+
+Tests
+----------------------
+Specify url in the config file
+```
+cp tests/api.suite.yml.dist tests/api.suite.yml
+```
+Run tests
+```
+./vendor/bin/codecept run "tests/api" --steps
+```

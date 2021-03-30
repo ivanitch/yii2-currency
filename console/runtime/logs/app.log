@@ -1,0 +1,464 @@
+2021-03-30 07:43:01 [-][-][-][error][yii\di\NotInstantiableException] ReflectionException: Class common\bootstrap\SetUp does not exist in S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php:508
+Stack trace:
+#0 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(508): ReflectionClass->__construct()
+#1 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(386): yii\di\Container->getDependencies()
+#2 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(171): yii\di\Container->build()
+#3 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\BaseYii.php(345): yii\di\Container->get()
+#4 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(328): yii\BaseYii::createObject()
+#5 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(279): yii\base\Application->bootstrap()
+#6 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(125): yii\base\Application->init()
+#7 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\console\Application->init()
+#8 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(212): yii\base\BaseObject->__construct()
+#9 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(90): yii\base\Application->__construct()
+#10 S:\OpenServer\domains\yii2\currency\yii(25): yii\console\Application->__construct()
+#11 {main}
+
+Next yii\di\NotInstantiableException: Failed to instantiate component or class "common\bootstrap\SetUp". in S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php:510
+Stack trace:
+#0 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(386): yii\di\Container->getDependencies()
+#1 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(171): yii\di\Container->build()
+#2 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\BaseYii.php(345): yii\di\Container->get()
+#3 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(328): yii\BaseYii::createObject()
+#4 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(279): yii\base\Application->bootstrap()
+#5 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(125): yii\base\Application->init()
+#6 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\console\Application->init()
+#7 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(212): yii\base\BaseObject->__construct()
+#8 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(90): yii\base\Application->__construct()
+#9 S:\OpenServer\domains\yii2\currency\yii(25): yii\console\Application->__construct()
+#10 {main}
+2021-03-30 07:43:01 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Ivanitch\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPOSE_CONVERT_WINDOWS_PATHS' => 'true'
+    'COMPUTERNAME' => 'WIN-I1RGTCNHT55'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOME' => 'C:\\Users\\Ivanitch'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Ivanitch'
+    'INTEL_DEV_REDIST' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\'
+    'LOCALAPPDATA' => 'C:\\Users\\Ivanitch\\AppData\\Local'
+    'LOGONSERVER' => '\\\\WIN-I1RGTCNHT55'
+    'MIC_LD_LIBRARY_PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic'
+    'NUMBER_OF_PROCESSORS' => '2'
+    'OneDrive' => 'C:\\Users\\Ivanitch\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Ivanitch\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\OpenSSL-Win64\\bin\\openssl.cfg'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Program Files\\wget;C:\\Program Files\\Git\\cmd;S:\\OpenServer\\modules\\database\\MySQL-5.7\\bin;S:\\OpenServer\\modules\\php\\PHP_7.4;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\nodejs\\;;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Ruby27-x64\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Ivanitch\\AppData\\Local\\atom\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Ivanitch\\AppData\\Roaming\\npm;C:\\Program Files\\JetBrains\\PhpStorm 211.6556.12\\bin;C:\\Program Files (x86)\\GnuWin32\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Pandoc\\;C:\\Program Files\\JetBrains\\WebStorm 2020.3.3\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW;.CPL'
+    'PhpStorm' => 'C:\\Program Files\\JetBrains\\PhpStorm 211.6556.12\\bin;'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\Ivanitch\\OneDrive\\Документы\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'RUBYOPT' => '-Eutf-8'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\Ivanitch\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Ivanitch\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'WIN-I1RGTCNHT55'
+    'USERDOMAIN_ROAMINGPROFILE' => 'WIN-I1RGTCNHT55'
+    'USERNAME' => 'Ivanitch'
+    'USERPROFILE' => 'C:\\Users\\Ivanitch'
+    'WebStorm' => 'C:\\Program Files\\JetBrains\\WebStorm 2020.3.3\\bin;'
+    'windir' => 'C:\\WINDOWS'
+    'WSLENV' => 'WT_SESSION::WT_PROFILE_ID'
+    'WT_PROFILE_ID' => '{61c54bbd-c2c6-5271-96e7-009a87ff44bf}'
+    'WT_SESSION' => 'c1779408-f8a8-4d36-be1a-ca227234e579'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1617057781.3068
+    'REQUEST_TIME' => 1617057781
+    'argv' => [
+        0 => 'yii'
+    ]
+    'argc' => 1
+]
+2021-03-30 07:49:09 [-][-][-][error][yii\di\NotInstantiableException] ReflectionException: Class common\bootstrap\SetUp does not exist in S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php:508
+Stack trace:
+#0 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(508): ReflectionClass->__construct()
+#1 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(386): yii\di\Container->getDependencies()
+#2 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(171): yii\di\Container->build()
+#3 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\BaseYii.php(345): yii\di\Container->get()
+#4 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(328): yii\BaseYii::createObject()
+#5 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(279): yii\base\Application->bootstrap()
+#6 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(125): yii\base\Application->init()
+#7 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\console\Application->init()
+#8 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(212): yii\base\BaseObject->__construct()
+#9 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(90): yii\base\Application->__construct()
+#10 S:\OpenServer\domains\yii2\currency\yii(25): yii\console\Application->__construct()
+#11 {main}
+
+Next yii\di\NotInstantiableException: Failed to instantiate component or class "common\bootstrap\SetUp". in S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php:510
+Stack trace:
+#0 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(386): yii\di\Container->getDependencies()
+#1 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(171): yii\di\Container->build()
+#2 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\BaseYii.php(345): yii\di\Container->get()
+#3 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(328): yii\BaseYii::createObject()
+#4 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(279): yii\base\Application->bootstrap()
+#5 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(125): yii\base\Application->init()
+#6 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\console\Application->init()
+#7 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(212): yii\base\BaseObject->__construct()
+#8 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(90): yii\base\Application->__construct()
+#9 S:\OpenServer\domains\yii2\currency\yii(25): yii\console\Application->__construct()
+#10 {main}
+2021-03-30 07:49:09 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Ivanitch\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPOSE_CONVERT_WINDOWS_PATHS' => 'true'
+    'COMPUTERNAME' => 'WIN-I1RGTCNHT55'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOME' => 'C:\\Users\\Ivanitch'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Ivanitch'
+    'INTEL_DEV_REDIST' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\'
+    'LOCALAPPDATA' => 'C:\\Users\\Ivanitch\\AppData\\Local'
+    'LOGONSERVER' => '\\\\WIN-I1RGTCNHT55'
+    'MIC_LD_LIBRARY_PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic'
+    'NUMBER_OF_PROCESSORS' => '2'
+    'OneDrive' => 'C:\\Users\\Ivanitch\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Ivanitch\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\OpenSSL-Win64\\bin\\openssl.cfg'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Program Files\\wget;C:\\Program Files\\Git\\cmd;S:\\OpenServer\\modules\\database\\MySQL-5.7\\bin;S:\\OpenServer\\modules\\php\\PHP_7.4;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\nodejs\\;;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Ruby27-x64\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Ivanitch\\AppData\\Local\\atom\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Ivanitch\\AppData\\Roaming\\npm;C:\\Program Files\\JetBrains\\PhpStorm 211.6556.12\\bin;C:\\Program Files (x86)\\GnuWin32\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Pandoc\\;C:\\Program Files\\JetBrains\\WebStorm 2020.3.3\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW;.CPL'
+    'PhpStorm' => 'C:\\Program Files\\JetBrains\\PhpStorm 211.6556.12\\bin;'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\Ivanitch\\OneDrive\\Документы\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'RUBYOPT' => '-Eutf-8'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\Ivanitch\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Ivanitch\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'WIN-I1RGTCNHT55'
+    'USERDOMAIN_ROAMINGPROFILE' => 'WIN-I1RGTCNHT55'
+    'USERNAME' => 'Ivanitch'
+    'USERPROFILE' => 'C:\\Users\\Ivanitch'
+    'WebStorm' => 'C:\\Program Files\\JetBrains\\WebStorm 2020.3.3\\bin;'
+    'windir' => 'C:\\WINDOWS'
+    'WSLENV' => 'WT_SESSION::WT_PROFILE_ID'
+    'WT_PROFILE_ID' => '{61c54bbd-c2c6-5271-96e7-009a87ff44bf}'
+    'WT_SESSION' => 'c1779408-f8a8-4d36-be1a-ca227234e579'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1617058149.4937
+    'REQUEST_TIME' => 1617058149
+    'argv' => [
+        0 => 'yii'
+    ]
+    'argc' => 1
+]
+2021-03-30 07:49:53 [-][-][-][error][yii\di\NotInstantiableException] ReflectionException: Class common\bootstrap\SetUp does not exist in S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php:508
+Stack trace:
+#0 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(508): ReflectionClass->__construct()
+#1 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(386): yii\di\Container->getDependencies()
+#2 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(171): yii\di\Container->build()
+#3 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\BaseYii.php(345): yii\di\Container->get()
+#4 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(328): yii\BaseYii::createObject()
+#5 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(279): yii\base\Application->bootstrap()
+#6 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(125): yii\base\Application->init()
+#7 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\console\Application->init()
+#8 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(212): yii\base\BaseObject->__construct()
+#9 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(90): yii\base\Application->__construct()
+#10 S:\OpenServer\domains\yii2\currency\yii(25): yii\console\Application->__construct()
+#11 {main}
+
+Next yii\di\NotInstantiableException: Failed to instantiate component or class "common\bootstrap\SetUp". in S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php:510
+Stack trace:
+#0 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(386): yii\di\Container->getDependencies()
+#1 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\di\Container.php(171): yii\di\Container->build()
+#2 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\BaseYii.php(345): yii\di\Container->get()
+#3 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(328): yii\BaseYii::createObject()
+#4 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(279): yii\base\Application->bootstrap()
+#5 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(125): yii\base\Application->init()
+#6 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\console\Application->init()
+#7 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(212): yii\base\BaseObject->__construct()
+#8 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(90): yii\base\Application->__construct()
+#9 S:\OpenServer\domains\yii2\currency\yii(25): yii\console\Application->__construct()
+#10 {main}
+2021-03-30 07:49:53 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Ivanitch\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPOSE_CONVERT_WINDOWS_PATHS' => 'true'
+    'COMPUTERNAME' => 'WIN-I1RGTCNHT55'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOME' => 'C:\\Users\\Ivanitch'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Ivanitch'
+    'INTEL_DEV_REDIST' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\'
+    'LOCALAPPDATA' => 'C:\\Users\\Ivanitch\\AppData\\Local'
+    'LOGONSERVER' => '\\\\WIN-I1RGTCNHT55'
+    'MIC_LD_LIBRARY_PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic'
+    'NUMBER_OF_PROCESSORS' => '2'
+    'OneDrive' => 'C:\\Users\\Ivanitch\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Ivanitch\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\OpenSSL-Win64\\bin\\openssl.cfg'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Program Files\\wget;C:\\Program Files\\Git\\cmd;S:\\OpenServer\\modules\\database\\MySQL-5.7\\bin;S:\\OpenServer\\modules\\php\\PHP_7.4;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\nodejs\\;;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Ruby27-x64\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Ivanitch\\AppData\\Local\\atom\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Ivanitch\\AppData\\Roaming\\npm;C:\\Program Files\\JetBrains\\PhpStorm 211.6556.12\\bin;C:\\Program Files (x86)\\GnuWin32\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Pandoc\\;C:\\Program Files\\JetBrains\\WebStorm 2020.3.3\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW;.CPL'
+    'PhpStorm' => 'C:\\Program Files\\JetBrains\\PhpStorm 211.6556.12\\bin;'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\Ivanitch\\OneDrive\\Документы\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'RUBYOPT' => '-Eutf-8'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\Ivanitch\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Ivanitch\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'WIN-I1RGTCNHT55'
+    'USERDOMAIN_ROAMINGPROFILE' => 'WIN-I1RGTCNHT55'
+    'USERNAME' => 'Ivanitch'
+    'USERPROFILE' => 'C:\\Users\\Ivanitch'
+    'WebStorm' => 'C:\\Program Files\\JetBrains\\WebStorm 2020.3.3\\bin;'
+    'windir' => 'C:\\WINDOWS'
+    'WSLENV' => 'WT_SESSION::WT_PROFILE_ID'
+    'WT_PROFILE_ID' => '{61c54bbd-c2c6-5271-96e7-009a87ff44bf}'
+    'WT_SESSION' => 'c1779408-f8a8-4d36-be1a-ca227234e579'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1617058193.8884
+    'REQUEST_TIME' => 1617058193
+    'argv' => [
+        0 => 'yii'
+    ]
+    'argc' => 1
+]
+2021-03-30 07:53:45 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "-v". in S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Module.php:543
+Stack trace:
+#0 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction()
+#1 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction()
+#2 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest()
+#3 S:\OpenServer\domains\yii2\currency\yii(26): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "-v". in S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php:184
+Stack trace:
+#0 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction()
+#1 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest()
+#2 S:\OpenServer\domains\yii2\currency\yii(26): yii\base\Application->run()
+#3 {main}
+2021-03-30 07:53:45 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Ivanitch\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPOSE_CONVERT_WINDOWS_PATHS' => 'true'
+    'COMPUTERNAME' => 'WIN-I1RGTCNHT55'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOME' => 'C:\\Users\\Ivanitch'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Ivanitch'
+    'INTEL_DEV_REDIST' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\'
+    'LOCALAPPDATA' => 'C:\\Users\\Ivanitch\\AppData\\Local'
+    'LOGONSERVER' => '\\\\WIN-I1RGTCNHT55'
+    'MIC_LD_LIBRARY_PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic'
+    'NUMBER_OF_PROCESSORS' => '2'
+    'OneDrive' => 'C:\\Users\\Ivanitch\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Ivanitch\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\OpenSSL-Win64\\bin\\openssl.cfg'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Program Files\\wget;C:\\Program Files\\Git\\cmd;S:\\OpenServer\\modules\\database\\MySQL-5.7\\bin;S:\\OpenServer\\modules\\php\\PHP_7.4;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\nodejs\\;;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Ruby27-x64\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Ivanitch\\AppData\\Local\\atom\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Ivanitch\\AppData\\Roaming\\npm;C:\\Program Files\\JetBrains\\PhpStorm 211.6556.12\\bin;C:\\Program Files (x86)\\GnuWin32\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Pandoc\\;C:\\Program Files\\JetBrains\\WebStorm 2020.3.3\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW;.CPL'
+    'PhpStorm' => 'C:\\Program Files\\JetBrains\\PhpStorm 211.6556.12\\bin;'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\Ivanitch\\OneDrive\\Документы\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'RUBYOPT' => '-Eutf-8'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\Ivanitch\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Ivanitch\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'WIN-I1RGTCNHT55'
+    'USERDOMAIN_ROAMINGPROFILE' => 'WIN-I1RGTCNHT55'
+    'USERNAME' => 'Ivanitch'
+    'USERPROFILE' => 'C:\\Users\\Ivanitch'
+    'WebStorm' => 'C:\\Program Files\\JetBrains\\WebStorm 2020.3.3\\bin;'
+    'windir' => 'C:\\WINDOWS'
+    'WSLENV' => 'WT_SESSION::WT_PROFILE_ID'
+    'WT_PROFILE_ID' => '{61c54bbd-c2c6-5271-96e7-009a87ff44bf}'
+    'WT_SESSION' => 'c1779408-f8a8-4d36-be1a-ca227234e579'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1617058425.8575
+    'REQUEST_TIME' => 1617058425
+    'argv' => [
+        0 => 'yii'
+        1 => '-v'
+    ]
+    'argc' => 2
+]
+2021-03-30 07:53:59 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "--version". in S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Module.php:543
+Stack trace:
+#0 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction()
+#1 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction()
+#2 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest()
+#3 S:\OpenServer\domains\yii2\currency\yii(26): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "--version". in S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php:184
+Stack trace:
+#0 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction()
+#1 S:\OpenServer\domains\yii2\currency\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest()
+#2 S:\OpenServer\domains\yii2\currency\yii(26): yii\base\Application->run()
+#3 {main}
+2021-03-30 07:53:59 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Ivanitch\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPOSE_CONVERT_WINDOWS_PATHS' => 'true'
+    'COMPUTERNAME' => 'WIN-I1RGTCNHT55'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOME' => 'C:\\Users\\Ivanitch'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Ivanitch'
+    'INTEL_DEV_REDIST' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\'
+    'LOCALAPPDATA' => 'C:\\Users\\Ivanitch\\AppData\\Local'
+    'LOGONSERVER' => '\\\\WIN-I1RGTCNHT55'
+    'MIC_LD_LIBRARY_PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic'
+    'NUMBER_OF_PROCESSORS' => '2'
+    'OneDrive' => 'C:\\Users\\Ivanitch\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Ivanitch\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\OpenSSL-Win64\\bin\\openssl.cfg'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\HashiCorp\\Vagrant\\bin;C:\\Program Files\\wget;C:\\Program Files\\Git\\cmd;S:\\OpenServer\\modules\\database\\MySQL-5.7\\bin;S:\\OpenServer\\modules\\php\\PHP_7.4;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\nodejs\\;;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Ruby27-x64\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Ivanitch\\AppData\\Local\\atom\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Ivanitch\\AppData\\Roaming\\npm;C:\\Program Files\\JetBrains\\PhpStorm 211.6556.12\\bin;C:\\Program Files (x86)\\GnuWin32\\bin;C:\\Users\\Ivanitch\\AppData\\Local\\Pandoc\\;C:\\Program Files\\JetBrains\\WebStorm 2020.3.3\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW;.CPL'
+    'PhpStorm' => 'C:\\Program Files\\JetBrains\\PhpStorm 211.6556.12\\bin;'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\Ivanitch\\OneDrive\\Документы\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'RUBYOPT' => '-Eutf-8'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\Ivanitch\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Ivanitch\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'WIN-I1RGTCNHT55'
+    'USERDOMAIN_ROAMINGPROFILE' => 'WIN-I1RGTCNHT55'
+    'USERNAME' => 'Ivanitch'
+    'USERPROFILE' => 'C:\\Users\\Ivanitch'
+    'WebStorm' => 'C:\\Program Files\\JetBrains\\WebStorm 2020.3.3\\bin;'
+    'windir' => 'C:\\WINDOWS'
+    'WSLENV' => 'WT_SESSION::WT_PROFILE_ID'
+    'WT_PROFILE_ID' => '{61c54bbd-c2c6-5271-96e7-009a87ff44bf}'
+    'WT_SESSION' => 'c1779408-f8a8-4d36-be1a-ca227234e579'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1617058439.6742
+    'REQUEST_TIME' => 1617058439
+    'argv' => [
+        0 => 'yii'
+        1 => '--version'
+    ]
+    'argc' => 2
+]
