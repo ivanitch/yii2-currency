@@ -7,22 +7,16 @@ use api\core\entities\Currency;
 use api\core\repositories\CurrencyRepository;
 use yii\web\NotFoundHttpException;
 
-class CurrencyService
+readonly class CurrencyService
 {
-    private CurrencyRepository $repository;
-    private CBRAgent $agent;
-    /**
-     * CurrencyService constructor.
-     * @param CurrencyRepository $repository
-     * @param CBRAgent $crb
-     */
-    public function __construct(CurrencyRepository $repository, CBRAgent $crb){
-        $this->repository = $repository;
-        $this->agent = $crb;
-    }
+    public function __construct(
+        private CurrencyRepository $repository,
+        private CBRAgent           $CBRAgent
+    ) {}
 
     /**
      * @param $id
+     * @return void
      * @throws NotFoundHttpException
      */
     public function remove($id): void
@@ -72,6 +66,6 @@ class CurrencyService
      */
     public function getActualCurrencies(): ?array
     {
-        return $this->agent->getAll();
+        return $this->CBRAgent->getAll();
     }
 }

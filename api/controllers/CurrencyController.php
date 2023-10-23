@@ -44,10 +44,11 @@ class CurrencyController extends AbstractRestController
      */
     public function beforeAction($action): bool
     {
-        if (in_array($action->id, ['currencies'])) {
-            $data = $this->modelClass::find()->asArray()->all();
-            if (empty($data)) $this->service->insertCurrency();
+        if ($action->id === 'currencies') {
+            $currencies = $this->modelClass::find()->asArray()->all();
+            if (empty($currencies)) $this->service->insertCurrency();
         }
+
         return parent::beforeAction($action);
     }
 
@@ -69,7 +70,7 @@ class CurrencyController extends AbstractRestController
         if (($model = $this->modelClass::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('The requested Currency does not exist.');
         }
     }
 
@@ -102,6 +103,6 @@ class CurrencyController extends AbstractRestController
 
     protected function checkActions(): array
     {
-        return ['currencies', 'currency'];
+        return ['currencies', 'currency'];// TODO (update)!!
     }
 }

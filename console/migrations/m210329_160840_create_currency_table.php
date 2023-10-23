@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m210329_160840_create_currency_table extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->createTable('{{%currency}}', [
             'id' => $this->primaryKey(),
@@ -19,7 +19,7 @@ class m210329_160840_create_currency_table extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function safeDown(): void
     {
         $this->dropTable('{{%currency}}');
     }

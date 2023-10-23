@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+  web:
+    image: nginx:${NGINX_VERSION}
+    container_name: ${APP_NAME}_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./docker/nginx/conf.d/site.conf:/etc/nginx/conf.d/site.conf"
+      - "./docker/nginx/ssl:/etc/nginx/ssl"
+      - "./docker/log/nginx:/var/log/nginx"
+      - ".:/var/www/html"
+    depends_on:
+      - php-fpm
+      - mysqldb
+    networks:
+      default:
+        aliases:
+          - ${NGINX_HOST}
+  php-fpm:
+    build: "./docker/php"
+    container_name: ${APP_NAME}_php-fpm
+    volumes:
+      - "./docker/php/conf.d/php.ini:/usr/local/etc/php/conf.d/php.ini"
+      - ".:/var/www/html"
+    depends_on:
+      - mysqldb
+    networks:
+      - default
+  mysqldb:
+    image: mysql:${MYSQL_VERSION}
+    container_name: ${APP_NAME}_${MYSQL_HOST}
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./docker/mysql/data/db/mysql:/var/lib/mysql"
+      - "./docker/mysql/conf.d/my.conf:/etc/mysql/conf.d/my.cnf"
+      - ".:/var/www/html"
+    networks:
+      - default
+networks:
+  default:
+    driver: bridge

@@ -9,19 +9,20 @@ use yii\web\NotFoundHttpException;
 
 class CurrencyController extends Controller
 {
-    private CurrencyService $service;
-
     /**
-     * CurrencyController constructor.
      * @param $id
      * @param $module
      * @param CurrencyService $service
      * @param array $config
      */
-    public function __construct($id, $module, CurrencyService $service, $config = [])
+    public function __construct(
+                                         $id,
+                                         $module,
+        private readonly CurrencyService $service,
+        array                            $config = []
+    )
     {
         parent::__construct($id, $module, $config);
-        $this->service = $service;
     }
 
     /**
@@ -41,6 +42,8 @@ class CurrencyController extends Controller
         if ($difference) {
             $this->service->updateCurrency($difference);
         }
+
+        echo "DONE!" . PHP_EOL;
     }
 
     /**

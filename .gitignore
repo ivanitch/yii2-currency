@@ -32,3 +32,7 @@ phpunit.phar
 /.vagrant
 
 /tests/api.suite.yml
+/docker/nginx/conf.d/site.conf
+/.env
+/docker/mysql/data/
+/docker/log/

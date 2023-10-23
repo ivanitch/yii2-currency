@@ -38,7 +38,7 @@ class CurrencySearch extends Model
                 'defaultOrder' => ['id' => SORT_ASC]
             ],
             'pagination' => [
-                'pageSize' => \Yii::$app->params['apiPageSize'],
+                'pageSize' => \Yii::$app->params['pageSize'],
                 'pageParam' => 'page',
                 'forcePageParam' => false,
                 'pageSizeParam'  => false,

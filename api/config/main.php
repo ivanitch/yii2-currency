@@ -10,10 +10,7 @@ return [
     'controllerNamespace' => 'api\controllers',
     'language'=>'ru',
     'sourceLanguage'=>'ru-RU',
-    'aliases' => [
-        '@staticRoot' => $params['staticPath'],
-        '@static'   => $params['staticHostInfo'],
-    ],
+    'aliases' => [],
     'bootstrap' => [
         'log'
     ],
@@ -30,7 +27,7 @@ return [
             'formatters' => [
                 'json' => [
                     'class' => 'yii\web\JsonResponseFormatter',
-                    // На продакшене закомментировать
+                    // В продакшене рекомендуется закомментировать
                     'prettyPrint' => YII_DEBUG,
                     'encodeOptions' => JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
                 ],

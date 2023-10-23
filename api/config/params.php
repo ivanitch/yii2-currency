@@ -1,4 +1,5 @@
 <?php
+
 return [
-    'apiPageSize' => 15
+    'pageSize' => 15
 ];

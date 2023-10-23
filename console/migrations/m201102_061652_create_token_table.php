@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m201102_061652_create_token_table extends Migration
 {
-    public function up()
+    public function safeUp(): void
     {
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
@@ -22,11 +22,10 @@ class m201102_061652_create_token_table extends Migration
         ], $tableOptions);
 
         $this->createIndex('idx-token-user_id', '{{%token}}', 'user_id');
-
         $this->addForeignKey('fk-token-user_id', '{{%token}}', 'user_id', '{{%user}}', 'id', 'CASCADE', 'RESTRICT');
     }
 
-    public function down()
+    public function safeDown(): void
     {
         $this->dropTable('{{%token}}');
     }

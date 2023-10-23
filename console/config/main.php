@@ -1,4 +1,7 @@
 <?php
+
+use common\bootstrap\SetUp;
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/params.php'
@@ -9,7 +12,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
         'log',
-        \common\bootstrap\SetUp::class
+        SetUp::class
     ],
     'controllerNamespace' => 'console\controllers',
     'aliases' => [

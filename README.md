@@ -9,13 +9,28 @@ Clone a project
 ```
 git clone git@github.com:Ivanitch/yii2-currency.git .
 ```
+Run the project in docker
+```
+# Copy the files to run docker compose
+cp ./.env.dist ./.env
+cp ./docker/nginx/conf.d/site.conf.dist ./docker/nginx/conf.d/site.conf
+
+# Run containers build
+make build
+
+# Connect to the server
+make server
+```
 Copy config file and connect to database
 ```
-cp common/config/main-local.php.dist common/config/main-local.php
+cp ./common/config/main-local.php.dist ./common/config/main-local.php
 ```
 Install dependencies
 ```
 composer update
+
+# On the production server
+composer install --no-dev --optimize-autoloader --classmap-authoritative
 ```
 Run migrations.
 ```
@@ -29,33 +44,29 @@ Username: admin
 Role: [admin,user,?]: admin
 Done!
 ```
-Configuring a virtual host in Apache
-----------------------
-```
-<VirtualHost *:80>
-ServerName example.com
-DocumentRoot /var/www/html/example.com/api/web
-</VirtualHost>
-```
+
+
+
+
 Authorization
 ----------------------
 Request a token
 ```
-curl -X POST "Accept: application/json" -d "username=admin&password=admin" http://example.com/auth
+curl -X POST "Accept: application/json" -d "username=admin&password=admin" http://app.loc/auth
 ```
 Get the token and timestamp when it expires
 
 Profile
 ```
-curl -H "Authorization: Bearer <token>" http://example.com/profile
+curl -H "Authorization: Bearer <token>" http://app.loc/profile
 ```
 Get all currencies
 ```
-curl -H "Authorization: Bearer <token>" http://example.com/currencies
+curl -H "Authorization: Bearer <token>" http://app.loc/currencies
 ```
 Currency rate by ID
 ```
-curl -H "Authorization: Bearer <token>" http://example.com/currencies/11
+curl -H "Authorization: Bearer <token>" http://app.loc/currencies/11
 ```
 Updating currencies from the console
 ```

@@ -7,7 +7,7 @@ use yii\db\Migration;
  */
 class m200201_150838_add_user_roles extends Migration
 {
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->batchInsert('{{%auth_items}}', ['type', 'name', 'description'], [
           [1, 'user', 'User'],
@@ -18,7 +18,7 @@ class m200201_150838_add_user_roles extends Migration
         ]);
         $this->execute('INSERT INTO {{%auth_assignments}} (item_name, user_id) SELECT \'user\', u.id FROM {{%user}} u ORDER BY u.id');
     }
-    public function down()
+    public function safeDown(): void
     {
         $this->delete('{{%auth_items}}', ['name' => ['user', 'admin']]);
     }
