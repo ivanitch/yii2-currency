@@ -58,29 +58,20 @@ curl -H "Authorization: Bearer <token>" http://app.loc/profile
 ```
 Get all currencies
 ```shell
-curl -H "Authorization: Bearer <token>" http://app.loc/currencies
+http://app.loc/currencies
 ```
-Currency rate by ID
+Currency rate by NumCode or CharCode
 ```shell
-curl -H "Authorization: Bearer <token>" http://app.loc/currencies/11
+http://app.loc/currencies/usd
+# OR
+http://app.loc/currencies/840
 ```
 Updating currencies from the console
 ```shell
-php /var/project/yii currency/update
+php yii currency/update
 ```
-Updating Cron Data
+Updating exchange rate data via Cron
 ```shell
-31 13 * * * php /var/project/yii currency/update
-```
-Data is automatically updated at 13.31 (Moscow time)
-
-Tests
-----------------------
-Specify url in the config file
-```shell
-cp tests/api.suite.yml.dist tests/api.suite.yml
-```
-Run tests
-```shell
-./vendor/bin/codecept run "tests/api" --steps
+# Data is automatically updated at 12.00 (Moscow time)
+0 12 * * * php /var/project/yii currency/update
 ```

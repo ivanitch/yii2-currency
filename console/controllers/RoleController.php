@@ -41,6 +41,7 @@ class RoleController extends Controller
         if (!$model = User::findOne(['username' => $username])) {
             throw new Exception('User is not found');
         }
+
         return $model;
     }
 }

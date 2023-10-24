@@ -3,6 +3,8 @@
 namespace core\repositories;
 
 use core\entities\Currency;
+use RuntimeException;
+use yii\db\ActiveRecord;
 use yii\web\NotFoundHttpException;
 
 class CurrencyRepository
@@ -15,23 +17,15 @@ class CurrencyRepository
     public function get($id): Currency
     {
         if (!$model = Currency::findOne($id)) {
-            throw new NotFoundHttpException('Model is not found.');
+            throw new NotFoundHttpException('Currency is not found.');
         }
         return $model;
     }
 
-    public function getAll($id): array
+    public function getAll(): array
     {
-        $data = Currency::find()->select(['name', 'rate'])->asArray()->all();
-
-
-
-        if (!$model = Currency::findOne($id)) {
-            throw new NotFoundHttpException('Model is not found.');
-        }
-        return $model;
+        return Currency::find()->asArray()->all();
     }
-
 
     /**
      * @param Currency $model
@@ -39,31 +33,16 @@ class CurrencyRepository
     public function save(Currency $model): void
     {
         if (!$model->save()) {
-            throw new \RuntimeException('Saving error.');
+            throw new RuntimeException('Saving error.');
         }
     }
 
-    /**
-     * @param Currency $model
-     */
-    public function remove(Currency $model): void
+    public function getByNumCode(int $numCode): array|ActiveRecord
     {
-        if (!$model->delete()) {
-            throw new \RuntimeException('Removing error.');
+        if (!$model = Currency::find()->where(['num_code' => $numCode])->one()) {
+            throw new NotFoundHttpException('Currency is not found.');
         }
-    }
 
-    /**
-     * @param $name
-     * @return Currency
-     * @throws NotFoundHttpException
-     */
-    public function getByName($name): Currency
-    {
-        if (!$model = Currency::find()->where(['name' => $name])->one()) {
-            throw new NotFoundHttpException('Model is not found.');
-        }
         return $model;
     }
-
 }

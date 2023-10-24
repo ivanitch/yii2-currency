@@ -8,12 +8,12 @@ return [
     'cache' => false,
     'rules' => [
         '' => 'site/index',
-        'POST auth' => 'site/login',
+        'POST auth' => 'auth/auth',
         'GET profile' => 'profile/index',
 
         'currencies/page=<page:\d+>' => 'currency/currencies',
         'currencies' => 'currency/currencies',
-        'currencies/<id:\d+>' => 'currency/currency',
+        'currencies/<code:[\w-]+>' => 'currency/currency',
 
 //        [
 //            'pluralize' => true, // Во множественное число

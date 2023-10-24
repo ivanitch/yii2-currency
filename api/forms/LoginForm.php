@@ -8,10 +8,10 @@ use yii\base\Model;
 
 class LoginForm extends Model
 {
-    public string $username;
-    public string  $password;
+    public ?string $username = null;
+    public ?string $password = null;
 
-    private User $user;
+    private ?User $user = null;
 
     /**
      * @inheritdoc
@@ -29,9 +29,9 @@ class LoginForm extends Model
      * This method serves as the inline validation for password.
      *
      * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
+     * @param null|array $params the additional name-value pairs given in the rule
      */
-    public function validatePassword(string $attribute, array $params): void
+    public function validatePassword(string $attribute, ?array $params): void
     {
         if (!$this->hasErrors()) {
             $user = $this->getUser();

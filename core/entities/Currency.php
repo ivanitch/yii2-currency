@@ -5,8 +5,11 @@ namespace core\entities;
 use yii\db\ActiveRecord;
 
 /**
- * @property integer $id
+ * @property int $num_code
+ * @property string $char_code
+ * @property int $nominal
  * @property string $name
+ * @property float $value
  * @property float $rate
  */
 class Currency extends ActiveRecord
@@ -16,16 +19,32 @@ class Currency extends ActiveRecord
         return '{{%currency}}';
     }
 
-    public static function add(string $name, string $rate): self
+    /**
+     * @param int $num_code
+     * @param string $char_code
+     * @param int $nominal
+     * @param string $name
+     * @param float $value
+     * @param float $rate
+     * @return self
+     */
+    public static function add(
+        int $num_code,
+        string $char_code,
+        int $nominal,
+        string $name,
+        float $value,
+        float $rate
+    ): self
     {
         $model = new static();
+        $model->num_code = $num_code;
+        $model->char_code = $char_code;
+        $model->nominal = $nominal;
         $model->name = $name;
+        $model->value = $value;
         $model->rate = $rate;
-        return $model;
-    }
 
-    public function edit(string $rate): void
-    {
-        $this->rate = $rate;
+        return $model;
     }
 }

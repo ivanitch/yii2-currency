@@ -4,7 +4,7 @@ namespace core\services;
 
 use core\entities\Currency;
 use core\repositories\CurrencyRepository;
-use yii\web\NotFoundHttpException;
+use Yii;
 
 readonly class CurrencyService
 {
@@ -13,63 +13,47 @@ readonly class CurrencyService
         private CBRAgentService $CBRAgentService
     ) {}
 
-    /**
-     * @param $id
-     * @return void
-     * @throws NotFoundHttpException
-     */
-    public function remove($id): void // @TODO ????
+    public function addCurrencies(): void
     {
-        $model = $this->repository->get($id);
-        $this->repository->remove($model);
+        $data = $this->getActualWithAgent();
+        if (empty($data)) return;
+
+        foreach ($data as $item):
+            $currency = Currency::add(
+                $item['num_code'],
+                $item['char_code'],
+                $item['nominal'],
+                $item['name'],
+                $item['value'],
+                $item['rate']
+            );
+            $this->repository->save($currency);
+        endforeach;
+
+        echo "Done!" . PHP_EOL;
+        echo "Added " . count($data) . " currencies" . PHP_EOL;
     }
 
-    /**
-     * @param $id
-     * @return Currency|null
-     * @throws NotFoundHttpException
-     */
-    public function get($id): ?Currency
+    public function updateCurrencies(): void
     {
-        return $this->repository->get($id);
-    }
-
-
-    public function insertCurrency(): void
-    {
-        if (is_array($data = $this->getActualThroughAnAgent())) {
-            foreach ($data as $name => $rate) {
-                $model = Currency::add($name, $rate);
-                $this->repository->save($model);
-            }
+        $currentInDb = $this->getCurrentInDb();
+        if (!empty($currentInDb)) {
+            Yii::$app->db->createCommand()->truncateTable(Currency::tableName())->execute();
         }
-    }
 
-    /**
-     * @throws NotFoundHttpException
-     */
-    public function updateCurrency(array $difference): void
-    {
-        if ($difference) {
-            foreach ($difference as $name => $rate) {
-                $model = $this->repository->getByName($name);
-                $model->edit($rate);
-                $this->repository->save($model);
-            }
-        }
+        $this->addCurrencies();
     }
-
 
     /**
      * @return array|null
      */
-    public function getActualThroughAnAgent(): ?array
+    public function getActualWithAgent(): ?array
     {
         return $this->CBRAgentService->getAll();
     }
 
-    public function getAll(): array
+    public function getCurrentInDb(): array
     {
-        return Currency::find()->select(['name', 'rate'])->asArray()->all();
+        return $this->repository->getAll();
     }
 }

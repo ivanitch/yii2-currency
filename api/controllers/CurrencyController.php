@@ -7,11 +7,12 @@ use core\entities\Currency;
 use core\services\CurrencyService;
 use yii\base\Action;
 use yii\data\ActiveDataProvider;
+use yii\db\ActiveRecord;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
-use yii\web\NotFoundHttpException;
 
-class CurrencyController extends AbstractRestController
+class CurrencyController extends BaseRestController
 {
     /**
      * @var Currency $modelClass
@@ -37,8 +38,8 @@ class CurrencyController extends AbstractRestController
     public function beforeAction($action): bool
     {
         if ($action->id === 'currencies') {
-            $currencies = $this->modelClass::find()->asArray()->all();
-            if (empty($currencies)) $this->service->insertCurrency();
+            $currencies = $this->service->getCurrentInDb();
+            if (empty($currencies)) $this->service->addCurrencies();
         }
 
         return parent::beforeAction($action);
@@ -52,27 +53,19 @@ class CurrencyController extends AbstractRestController
         return $this->prepareDataProvider();
     }
 
-    /**
-     * @param $id
-     * @return Currency|null
-     * @throws NotFoundHttpException
-     */
-    public function actionCurrency($id): ?Currency
+    public function actionCurrency(mixed $code): ActiveRecord|string
     {
-        if (($model = $this->modelClass::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested Currency does not exist.');
-        }
-    }
+        $currency = $this->modelClass::find()->andWhere(
+            [
+                'or',
+                ['num_code' => $code],
+                ['char_code' => strtoupper($code)]
+            ]
+        )->one();
 
-    /**
-     * @return ActiveDataProvider
-     */
-    private function prepareDataProvider(): ActiveDataProvider
-    {
-        $searchModel = new CurrencySearch();
-        return $searchModel->search($this->args);
+        if (!$currency) return "Nothing found for your request: $code";
+
+        return $currency;
     }
 
     /**
@@ -81,6 +74,16 @@ class CurrencyController extends AbstractRestController
     public function behaviors(): array
     {
         $behaviors = parent::behaviors();
+
+        $behaviors['access'] = [
+            'class' => AccessControl::class,
+            'rules' => [
+                [
+                    'allow' => true,
+                    'roles' => ['?'],
+                ],
+            ],
+        ];
 
         $behaviors['verbs'] = [
             'class' => VerbFilter::class,
@@ -93,8 +96,13 @@ class CurrencyController extends AbstractRestController
         return $behaviors;
     }
 
-    protected function checkActions(): array
+    /**
+     * @return ActiveDataProvider
+     */
+    private function prepareDataProvider(): ActiveDataProvider
     {
-        return ['update'];// TODO (update)!!
+        $searchModel = new CurrencySearch();
+
+        return $searchModel->search($this->args);
     }
 }

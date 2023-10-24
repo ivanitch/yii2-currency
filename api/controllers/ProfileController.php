@@ -3,9 +3,11 @@
 namespace api\controllers;
 
 use core\entities\User\User;
+use Yii;
 use yii\filters\AccessControl;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\HttpBearerAuth;
+use yii\filters\VerbFilter;
 use yii\rest\Controller;
 
 /**
@@ -14,6 +16,7 @@ use yii\rest\Controller;
  */
 class ProfileController extends Controller
 {
+
     public function behaviors(): array
     {
         $behaviors = parent::behaviors();
@@ -33,6 +36,13 @@ class ProfileController extends Controller
             ],
         ];
 
+        $behaviors['verbs'] = [
+            'class' => VerbFilter::class,
+            'actions' => [
+                'index' => ['get'],
+            ],
+        ];
+
         return $behaviors;
     }
 
@@ -44,18 +54,11 @@ class ProfileController extends Controller
         return $this->findModel();
     }
 
-    public function verbs(): array
-    {
-        return [
-            'index' => ['get']
-        ];
-    }
-
     /**
      * @return User
      */
     private function findModel(): User
     {
-        return User::findOne(\Yii::$app->user->id);
+        return User::findOne(Yii::$app->user->id);
     }
 }

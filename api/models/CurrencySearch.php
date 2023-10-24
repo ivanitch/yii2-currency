@@ -9,14 +9,18 @@ use yii\data\ActiveDataProvider;
 
 class CurrencySearch extends Model
 {
-    public ?int $id = null;
+    public ?int $num_code = null;
+    public string $char_code = '';
+    public ?int $nominal = 1;
     public string $name = '';
+    public float $value = 0.0000;
+    public float $rate = 0.0000;
 
     public function rules(): array
     {
         return [
-            [['id'], 'integer'],
-            [['name'], 'string'],
+            [['num_code', 'nominal', 'value', 'rate'], 'integer'],
+            [['char_code'], 'string'],
         ];
     }
 
@@ -36,7 +40,7 @@ class CurrencySearch extends Model
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort' => [
-                'defaultOrder' => ['id' => SORT_ASC]
+                'defaultOrder' => ['num_code' => SORT_ASC]
             ],
             'pagination' => [
                 'pageSize' => Yii::$app->params['pageSize'],
@@ -55,10 +59,10 @@ class CurrencySearch extends Model
         }
 
         $query->andFilterWhere([
-            'id' => $this->id,
+            'num_code' => $this->num_code,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name]);
+        $query->andFilterWhere(['like', 'num_code', $this->num_code]);
 
         return $dataProvider;
     }

@@ -29,9 +29,21 @@ class CBRAgentService
             $items = $root->getElementsByTagName('Valute');
 
             foreach ($items as $item) {
-                $name = $item->getElementsByTagName('CharCode')->item(0)->nodeValue;
-                $rate = $item->getElementsByTagName('Value')->item(0)->nodeValue;
-                $this->list[$name] = floatval(str_replace(',', '.', $rate));
+                $num_code = $item->getElementsByTagName('NumCode')->item(0)->nodeValue;
+                $char_code = $item->getElementsByTagName('CharCode')->item(0)->nodeValue;
+                $nominal = $item->getElementsByTagName('Nominal')->item(0)->nodeValue;
+                $name = $item->getElementsByTagName('Name')->item(0)->nodeValue;
+                $value = $item->getElementsByTagName('Value')->item(0)->nodeValue;
+                $rate = $item->getElementsByTagName('VunitRate')->item(0)->nodeValue;
+
+                $this->list[$num_code] = [
+                    'num_code' => (int) $num_code,
+                    'char_code' => $char_code,
+                    'nominal' => (int) $nominal,
+                    'name' => $name,
+                    'value' => self::format($value),
+                    'rate' => self::format($rate),
+                ];
             }
         }
 
@@ -44,5 +56,18 @@ class CBRAgentService
     public function getAll(): array
     {
         return $this->list;
+    }
+
+    protected static function format(mixed $price): ?float
+    {
+        if (!$price) return null;
+
+        return number_format(
+            str_replace(
+                ' ',
+                '',
+                str_replace(',', '.', $price)
+            ), 4, '.', ''
+        );
     }
 }
