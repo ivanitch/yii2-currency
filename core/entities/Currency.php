@@ -16,11 +16,9 @@ use yii\db\ActiveRecord;
  */
 class Currency extends ActiveRecord
 {
-    const DOLLAR_NUM_CODE_COLUMN = 'num_code';
-    const DOLLAR_CHAR_CODE_COLUMN = 'char_code';
     const DOLLAR_NUM_CODE = 840;
     const DOLLAR_CHAR_CODE = 'USD';
-    const DOLLAR_MAX_VALUE = 90;
+    const DOLLAR_MAX_VALUE = 100;
 
     public static function tableName(): string
     {
