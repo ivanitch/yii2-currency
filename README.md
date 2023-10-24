@@ -1,4 +1,4 @@
-Yii 2 API application
+Yii2 API application
 ===============================
 
 API application for getting currency rates
@@ -56,6 +56,8 @@ Profile
 ```shell
 curl -H "Authorization: Bearer <token>" http://app.loc/profile
 ```
+Get data on currencies
+----------------------
 Get all currencies
 ```shell
 http://app.loc/currencies
@@ -70,6 +72,8 @@ Updating currencies from the console
 ```shell
 php yii currency/update
 ```
+CRON
+----------------------
 Updating exchange rate data via Cron
 ```shell
 # Data is automatically updated at 12.00 (Moscow time)
