@@ -5,6 +5,7 @@ namespace core\repositories;
 use core\entities\Currency;
 use RuntimeException;
 use yii\db\ActiveRecord;
+use yii\db\BaseActiveRecord;
 use yii\web\NotFoundHttpException;
 
 class CurrencyRepository

@@ -4,6 +4,7 @@ namespace core\entities\User;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
@@ -14,6 +15,7 @@ use yii\web\IdentityInterface;
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
+ * @property string $phone
  * @property string $email_confirm_token
  * @property string $auth_key
  * @property integer $status
@@ -45,7 +47,7 @@ class User extends ActiveRecord implements IdentityInterface
 
     /**
      * @param int|string $id
-     * @return User|IdentityInterface|null
+     * @return IdentityInterface
      */
     public static function findIdentity($id): IdentityInterface
     {
@@ -134,7 +136,7 @@ class User extends ActiveRecord implements IdentityInterface
         return Yii::$app->security->validatePassword($password, $this->password_hash);
     }
 
-    public function getTokens(): \yii\db\ActiveQuery
+    public function getTokens(): ActiveQuery
     {
         return $this->hasMany(Token::class, ['user_id' => 'id']);
     }

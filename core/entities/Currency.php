@@ -2,6 +2,8 @@
 
 namespace core\entities;
 
+use core\entities\User\User;
+use core\services\SmsService;
 use yii\db\ActiveRecord;
 
 /**
@@ -14,6 +16,12 @@ use yii\db\ActiveRecord;
  */
 class Currency extends ActiveRecord
 {
+    const DOLLAR_NUM_CODE_COLUMN = 'num_code';
+    const DOLLAR_CHAR_CODE_COLUMN = 'char_code';
+    const DOLLAR_NUM_CODE = 840;
+    const DOLLAR_CHAR_CODE = 'USD';
+    const DOLLAR_MAX_VALUE = 90;
+
     public static function tableName(): string
     {
         return '{{%currency}}';
@@ -46,5 +54,30 @@ class Currency extends ActiveRecord
         $model->rate = $rate;
 
         return $model;
+    }
+
+    public function afterSave($insert, $changedAttributes): void
+    {
+        parent::afterSave($insert, $changedAttributes);
+
+        $num_code = $this->getAttribute('num_code');
+        $char_code = $this->getAttribute('char_code');
+
+        if (self::isDollar($num_code, $char_code)) {
+            $dollarValue = (int) $this->getAttribute('value');
+            if ($dollarValue >= self::DOLLAR_MAX_VALUE) {
+                /* @var User $admin */
+                $admin = User::find()->where(['username' => 'admin'])->one();
+                (new SmsService())->send(
+                    $admin->phone,
+                    "The maximum value of the dollar is $dollarValue rubles."
+                );
+            }
+        }
+    }
+
+    protected static function isDollar(mixed $num_code, mixed $char_code): bool
+    {
+        return ($num_code == self::DOLLAR_NUM_CODE && $char_code == self::DOLLAR_CHAR_CODE);
     }
 }

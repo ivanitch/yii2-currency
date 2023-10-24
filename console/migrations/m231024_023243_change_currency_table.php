@@ -8,8 +8,7 @@ use yii\db\Migration;
 class m231024_023243_change_currency_table extends Migration
 {
     private string $table = '{{%currency}}';
-    private string $indexNumCode = '{{%idx-num-code}}';
-    private string $indexCharCode = '{{%idx-char-code}}';
+
     /**
      * {@inheritdoc}
      */
