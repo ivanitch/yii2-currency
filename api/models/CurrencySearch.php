@@ -2,14 +2,15 @@
 
 namespace api\models;
 
-use api\core\entities\Currency;
+use core\entities\Currency;
+use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 class CurrencySearch extends Model
 {
-    public $id;
-    public $name;
+    public ?int $id = null;
+    public string $name = '';
 
     public function rules(): array
     {
@@ -19,7 +20,7 @@ class CurrencySearch extends Model
         ];
     }
 
-    public function scenarios()
+    public function scenarios(): array
     {
         return Model::scenarios();
     }
@@ -38,7 +39,7 @@ class CurrencySearch extends Model
                 'defaultOrder' => ['id' => SORT_ASC]
             ],
             'pagination' => [
-                'pageSize' => \Yii::$app->params['pageSize'],
+                'pageSize' => Yii::$app->params['pageSize'],
                 'pageParam' => 'page',
                 'forcePageParam' => false,
                 'pageSizeParam'  => false,
@@ -57,8 +58,7 @@ class CurrencySearch extends Model
             'id' => $this->id,
         ]);
 
-        $query
-            ->andFilterWhere(['like', 'name', $this->name]);
+        $query->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }

@@ -1,4 +1,7 @@
 <?php
+
+use core\entities\User\User;
+
 $params = array_merge(
     require(__DIR__ . '/../../common/config/params.php'),
     require(__DIR__ . '/params.php')
@@ -34,7 +37,7 @@ return [
             ],
         ],
         'user' => [
-            'identityClass' => 'api\core\entities\User\User',
+            'identityClass' => User::class,
             'enableAutoLogin' => false,
             'enableSession' => false,
         ],

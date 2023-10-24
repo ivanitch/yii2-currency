@@ -1,44 +1,47 @@
 <?php
 
-namespace api\core\entities;
+namespace core\services;
+
+use DOMDocument;
+use RuntimeException;
+
 /**
  * Class CBRAgent
- * @package api\core\entities
+ * @package core\services
  */
-class CBRAgent
+class CBRAgentService
 {
-    protected $list = [];
+    const URL = 'http://www.cbr.ru/scripts/XML_daily.asp?date_req=';
+
+    protected array $list;
 
     /**
      * CBRAgent constructor.
      */
     public function __construct()
     {
-        $xml = new \DOMDocument();
-        $url = 'http://www.cbr.ru/scripts/XML_daily.asp?date_req=' . date('d.m.Y');
+        $xml = new DOMDocument();
 
-        if (@$xml->load($url))
-        {
+        $url = self::URL . date('d.m.Y');
+
+        if ($xml->load($url)) {
             $root = $xml->documentElement;
             $items = $root->getElementsByTagName('Valute');
 
-            foreach ($items as $item)
-            {
+            foreach ($items as $item) {
                 $name = $item->getElementsByTagName('CharCode')->item(0)->nodeValue;
                 $rate = $item->getElementsByTagName('Value')->item(0)->nodeValue;
                 $this->list[$name] = floatval(str_replace(',', '.', $rate));
             }
         }
-        else throw new \RuntimeException('Failed to load data.');
+
+        else throw new RuntimeException('Failed to load data.');
     }
 
-
-    public function getByName($name)
-    {
-        return isset($this->list[$name]) ? $this->list[$name] : 0;
-    }
-
-    public function getAll()
+    /**
+     * @return array
+     */
+    public function getAll(): array
     {
         return $this->list;
     }

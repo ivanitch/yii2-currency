@@ -1,4 +1,5 @@
 <?php
+
 namespace core\entities\User;
 
 use Yii;
@@ -53,8 +54,8 @@ class User extends ActiveRecord implements IdentityInterface
 
     /**
      * @param mixed $token
-     * @param null $type
-     * @return array|ActiveRecord|IdentityInterface|null
+     * @param $type
+     * @return IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null): IdentityInterface
     {
@@ -63,6 +64,35 @@ class User extends ActiveRecord implements IdentityInterface
             ->andWhere(['t.token' => $token])
             ->andWhere(['>', 't.expired_at', time()])
             ->one();
+    }
+
+    /**
+     * Finds user by password reset token
+     *
+     * @param string $token password reset token
+     * @return static|null
+     */
+    public static function findByPasswordResetToken(string $token): ?User
+    {
+        if (!static::isPasswordResetTokenValid($token)) return null;
+
+        return static::findOne([
+            'password_reset_token' => $token,
+            'status' => self::STATUS_ACTIVE,
+        ]);
+    }
+
+    /**
+     * Finds out if password reset token is valid
+     *
+     * @param string $token password reset token
+     * @return bool
+     */
+    public static function isPasswordResetTokenValid(string $token): bool
+    {
+        if (empty($token)) return false;
+        $timestamp = (int) substr($token, strrpos($token, '_') + 1);
+        return $timestamp + 3600 >= time();
     }
 
     public static function findByUsername($username): ?User
@@ -102,5 +132,17 @@ class User extends ActiveRecord implements IdentityInterface
     public function validatePassword($password): bool
     {
         return Yii::$app->security->validatePassword($password, $this->password_hash);
+    }
+
+    public function getTokens(): \yii\db\ActiveQuery
+    {
+        return $this->hasMany(Token::class, ['user_id' => 'id']);
+    }
+
+    public function fields(): array
+    {
+        return [
+            'username' => 'username'
+        ];
     }
 }

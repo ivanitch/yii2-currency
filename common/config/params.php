@@ -2,7 +2,7 @@
 
 return [
     'admin' => 'admin',
-    'adminEmail' => 'admin@gmail.com',
+    'adminEmail' => 'admin@example.com',
     'supportEmail' => '',
     'user.passwordResetTokenExpire' => 3600,
     'user.rememberMeDuration' => 3600 * 24 * 30,

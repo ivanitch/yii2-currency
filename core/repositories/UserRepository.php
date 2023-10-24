@@ -3,11 +3,12 @@
 namespace core\repositories;
 
 use core\entities\User\User;
+use yii\db\ActiveRecord;
 use yii\web\NotFoundHttpException;
 
 class UserRepository
 {
-    public function findByUsernameOrEmail($value): ?User
+    public function findByUsernameOrEmail($value): array|ActiveRecord
     {
         return User::find()->andWhere(['or', ['username' => $value], ['email' => $value]])->one();
     }

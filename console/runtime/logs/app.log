@@ -615,3 +615,189 @@ $_SERVER = [
     ]
     'argc' => 2
 ]
+2023-10-23 17:48:23 [-][-][-][error][Error] Error: Cannot indirectly modify readonly property api\core\entities\CBRAgent::$list in /var/www/html/api/core/entities/CBRAgent.php:33
+Stack trace:
+#0 [internal function]: api\core\entities\CBRAgent->__construct()
+#1 /var/www/html/vendor/yiisoft/yii2/di/Container.php(411): ReflectionClass->newInstanceArgs(Array)
+#2 /var/www/html/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('api\\core\\entiti...', Array, Array)
+#3 /var/www/html/vendor/yiisoft/yii2/di/Instance.php(169): yii\di\Container->get('api\\core\\entiti...')
+#4 /var/www/html/vendor/yiisoft/yii2/di/Container.php(591): yii\di\Instance->get(Object(yii\di\Container))
+#5 /var/www/html/vendor/yiisoft/yii2/di/Container.php(406): yii\di\Container->resolveDependencies(Array, Object(ReflectionClass))
+#6 /var/www/html/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('api\\core\\servic...', Array, Array)
+#7 /var/www/html/vendor/yiisoft/yii2/di/Instance.php(169): yii\di\Container->get('api\\core\\servic...')
+#8 /var/www/html/vendor/yiisoft/yii2/di/Container.php(591): yii\di\Instance->get(Object(yii\di\Container))
+#9 /var/www/html/vendor/yiisoft/yii2/di/Container.php(406): yii\di\Container->resolveDependencies(Array, Object(ReflectionClass))
+#10 /var/www/html/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('console\\control...', Array, Array)
+#11 /var/www/html/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('console\\control...', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/base/Module.php(666): yii\BaseYii::createObject('console\\control...', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/base/Module.php(620): yii\base\Module->createControllerByID('currency')
+#14 /var/www/html/vendor/yiisoft/yii2/base/Module.php(546): yii\base\Module->createController('update')
+#15 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('currency/update', Array)
+#16 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('currency/update', Array)
+#17 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#18 /var/www/html/yii(26): yii\base\Application->run()
+#19 {main}
+2023-10-23 17:48:22 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'HOSTNAME' => 'b589a33a9732'
+    'PHP_VERSION' => '8.2.11'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'HOME' => '/home/www'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:'
+    'PHP_SHA256' => '29af82e4f7509831490552918aad502697453f0869a579ee1b80b08f9112c5b8'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'TERM' => 'xterm'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.11.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.11.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1698072502.7545
+    'REQUEST_TIME' => 1698072502
+    'argv' => [
+        0 => 'yii'
+        1 => 'currency/update'
+    ]
+    'argc' => 2
+]
+2023-10-23 17:48:40 [-][-][-][error][Error] Error: Cannot indirectly modify readonly property api\core\entities\CBRAgent::$list in /var/www/html/api/core/entities/CBRAgent.php:33
+Stack trace:
+#0 [internal function]: api\core\entities\CBRAgent->__construct()
+#1 /var/www/html/vendor/yiisoft/yii2/di/Container.php(411): ReflectionClass->newInstanceArgs(Array)
+#2 /var/www/html/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('api\\core\\entiti...', Array, Array)
+#3 /var/www/html/vendor/yiisoft/yii2/di/Instance.php(169): yii\di\Container->get('api\\core\\entiti...')
+#4 /var/www/html/vendor/yiisoft/yii2/di/Container.php(591): yii\di\Instance->get(Object(yii\di\Container))
+#5 /var/www/html/vendor/yiisoft/yii2/di/Container.php(406): yii\di\Container->resolveDependencies(Array, Object(ReflectionClass))
+#6 /var/www/html/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('api\\core\\servic...', Array, Array)
+#7 /var/www/html/vendor/yiisoft/yii2/di/Instance.php(169): yii\di\Container->get('api\\core\\servic...')
+#8 /var/www/html/vendor/yiisoft/yii2/di/Container.php(591): yii\di\Instance->get(Object(yii\di\Container))
+#9 /var/www/html/vendor/yiisoft/yii2/di/Container.php(406): yii\di\Container->resolveDependencies(Array, Object(ReflectionClass))
+#10 /var/www/html/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('console\\control...', Array, Array)
+#11 /var/www/html/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('console\\control...', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/base/Module.php(666): yii\BaseYii::createObject('console\\control...', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/base/Module.php(620): yii\base\Module->createControllerByID('currency')
+#14 /var/www/html/vendor/yiisoft/yii2/base/Module.php(546): yii\base\Module->createController('update')
+#15 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('currency/update', Array)
+#16 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('currency/update', Array)
+#17 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#18 /var/www/html/yii(26): yii\base\Application->run()
+#19 {main}
+2023-10-23 17:48:39 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'HOSTNAME' => 'b589a33a9732'
+    'PHP_VERSION' => '8.2.11'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'HOME' => '/home/www'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:'
+    'PHP_SHA256' => '29af82e4f7509831490552918aad502697453f0869a579ee1b80b08f9112c5b8'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'TERM' => 'xterm'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.11.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.11.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1698072519.8891
+    'REQUEST_TIME' => 1698072519
+    'argv' => [
+        0 => 'yii'
+        1 => 'currency/update'
+    ]
+    'argc' => 2
+]
+2023-10-23 17:48:53 [-][-][-][error][Error] Error: Cannot indirectly modify readonly property api\core\entities\CBRAgent::$list in /var/www/html/api/core/entities/CBRAgent.php:33
+Stack trace:
+#0 [internal function]: api\core\entities\CBRAgent->__construct()
+#1 /var/www/html/vendor/yiisoft/yii2/di/Container.php(411): ReflectionClass->newInstanceArgs(Array)
+#2 /var/www/html/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('api\\core\\entiti...', Array, Array)
+#3 /var/www/html/vendor/yiisoft/yii2/di/Instance.php(169): yii\di\Container->get('api\\core\\entiti...')
+#4 /var/www/html/vendor/yiisoft/yii2/di/Container.php(591): yii\di\Instance->get(Object(yii\di\Container))
+#5 /var/www/html/vendor/yiisoft/yii2/di/Container.php(406): yii\di\Container->resolveDependencies(Array, Object(ReflectionClass))
+#6 /var/www/html/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('api\\core\\servic...', Array, Array)
+#7 /var/www/html/vendor/yiisoft/yii2/di/Instance.php(169): yii\di\Container->get('api\\core\\servic...')
+#8 /var/www/html/vendor/yiisoft/yii2/di/Container.php(591): yii\di\Instance->get(Object(yii\di\Container))
+#9 /var/www/html/vendor/yiisoft/yii2/di/Container.php(406): yii\di\Container->resolveDependencies(Array, Object(ReflectionClass))
+#10 /var/www/html/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('console\\control...', Array, Array)
+#11 /var/www/html/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('console\\control...', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/base/Module.php(666): yii\BaseYii::createObject('console\\control...', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/base/Module.php(620): yii\base\Module->createControllerByID('currency')
+#14 /var/www/html/vendor/yiisoft/yii2/base/Module.php(546): yii\base\Module->createController('update')
+#15 /var/www/html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('currency/update', Array)
+#16 /var/www/html/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('currency/update', Array)
+#17 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#18 /var/www/html/yii(26): yii\base\Application->run()
+#19 {main}
+2023-10-23 17:48:52 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'HOSTNAME' => 'b589a33a9732'
+    'PHP_VERSION' => '8.2.11'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'HOME' => '/home/www'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:'
+    'PHP_SHA256' => '29af82e4f7509831490552918aad502697453f0869a579ee1b80b08f9112c5b8'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c'
+    'TERM' => 'xterm'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.11.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.11.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1698072532.8569
+    'REQUEST_TIME' => 1698072532
+    'argv' => [
+        0 => 'yii'
+        1 => 'currency/update'
+    ]
+    'argc' => 2
+]

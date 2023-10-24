@@ -2,7 +2,7 @@
 
 namespace api\controllers;
 
-use api\core\entities\User\User;
+use core\entities\User\User;
 use yii\filters\AccessControl;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\HttpBearerAuth;

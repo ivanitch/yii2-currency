@@ -2,9 +2,9 @@
 
 namespace api\controllers;
 
-use api\core\entities\Currency;
-use api\core\services\CurrencyService;
 use api\models\CurrencySearch;
+use core\entities\Currency;
+use core\services\CurrencyService;
 use yii\base\Action;
 use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
@@ -18,23 +18,15 @@ class CurrencyController extends AbstractRestController
      */
     public $modelClass = Currency::class;
 
-    private CurrencyService $service;
 
-    /**
-     * CurrencyController constructor.
-     * @param $id
-     * @param $module
-     * @param CurrencyService $service
-     * @param array $config
-     */
     public function __construct(
-        $id,
-        $module,
-        CurrencyService $service,
-        $config = [])
+                                         $id,
+                                         $module,
+        private readonly CurrencyService $service,
+                                         array $config = []
+    )
     {
         parent::__construct($id, $module, $config);
-        $this->service = $service;
     }
 
     /**
@@ -103,6 +95,6 @@ class CurrencyController extends AbstractRestController
 
     protected function checkActions(): array
     {
-        return ['currencies', 'currency'];// TODO (update)!!
+        return ['update'];// TODO (update)!!
     }
 }

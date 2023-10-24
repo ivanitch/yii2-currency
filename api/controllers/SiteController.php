@@ -2,9 +2,10 @@
 
 namespace api\controllers;
 
+use api\forms\LoginForm;
+use core\entities\User\Token;
 use Yii;
 use yii\rest\Controller;
-use api\core\forms\LoginForm;
 
 class SiteController extends Controller
 {
@@ -13,11 +14,12 @@ class SiteController extends Controller
         return 'api';
     }
 
-    public function actionLogin()
+    public function actionLogin(): Token|LoginForm
     {
         $model = new LoginForm();
         $model->load(Yii::$app->request->bodyParams, '');
         if ($token = $model->auth()) return $token;
+
         return $model;
     }
 

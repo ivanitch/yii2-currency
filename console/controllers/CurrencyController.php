@@ -2,8 +2,7 @@
 
 namespace console\controllers;
 
-use api\core\entities\Currency;
-use api\core\services\CurrencyService;
+use core\services\CurrencyService;
 use yii\console\Controller;
 use yii\web\NotFoundHttpException;
 
@@ -26,39 +25,36 @@ class CurrencyController extends Controller
     }
 
     /**
-     * Adds role to user
+     * @return void
      * @throws NotFoundHttpException
      */
-    public function actionUpdate()
+    public function actionUpdate(): void
     {
-        $array = [];
-        $current = $this->getCurrentCurrencies();
-        foreach ($current as $item) {
-            $array[$item['name']] = (float)$item['rate'];
-        }
+        $result = [];
+        $current = $this->getCurrent();
 
-        $actual = $this->getActualCurrencies();
-        $difference = array_diff_assoc($actual, $array);
-        if ($difference) {
-            $this->service->updateCurrency($difference);
-        }
+        dd($current);
+        if (empty($current)):
+            $this->service->insertCurrency();
+        else:
+            foreach ($current as $item):
+                $result[$item['name']] = (float) $item['rate'];
+            endforeach;
+            $actual = $this->service->getActualThroughAnAgent();
+            $difference = array_diff_assoc($actual, $result);
+            if (!empty($difference)):
+                $this->service->updateCurrency($difference);
+            endif;
+        endif;
 
         echo "DONE!" . PHP_EOL;
     }
 
     /**
-     * @return array|null
-     */
-    private function getActualCurrencies(): ?array
-    {
-        return $this->service->getActualCurrencies();
-    }
-
-    /**
      * @return array
      */
-    private function getCurrentCurrencies(): array
+    private function getCurrent(): array
     {
-        return Currency::find()->select(['name', 'rate'])->asArray()->all();
+        return $this->service->getAll();
     }
 }
