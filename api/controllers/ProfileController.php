@@ -16,7 +16,6 @@ use yii\rest\Controller;
  */
 class ProfileController extends Controller
 {
-
     public function behaviors(): array
     {
         $behaviors = parent::behaviors();

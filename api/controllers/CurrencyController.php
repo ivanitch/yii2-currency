@@ -11,14 +11,12 @@ use yii\db\ActiveRecord;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
-
 class CurrencyController extends BaseRestController
 {
     /**
      * @var Currency $modelClass
      */
     public $modelClass = Currency::class;
-
 
     public function __construct(
                                          $id,
@@ -37,9 +35,8 @@ class CurrencyController extends BaseRestController
      */
     public function beforeAction($action): bool
     {
-        if ($action->id === 'currencies') {
-            $currencies = $this->service->getCurrentInDb();
-            if (empty($currencies)) $this->service->addCurrencies();
+        if (in_array($action->id, ['currencies', 'currency'])) {
+            if (empty($this->service->getCurrentInDb())) $this->service->addCurrencies();
         }
 
         return parent::beforeAction($action);
