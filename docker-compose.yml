@@ -1,50 +1,50 @@
-version: "3.9"
-
 services:
-  web:
-    image: nginx:${NGINX_VERSION}
+  nginx:
     container_name: ${APP_NAME}_nginx
+    image: nginx:${NGINX_VERSION}
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - "./docker/nginx/conf.d/site.conf:/etc/nginx/conf.d/site.conf"
-      - "./docker/nginx/ssl:/etc/nginx/ssl"
-      - "./docker/log/nginx:/var/log/nginx"
-      - ".:/var/www/html"
+      - ${DOCKER_DIR}/nginx/conf.d/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ${DOCKER_DIR}/nginx/ssl:/etc/nginx/ssl
+      - ${DOCKER_DIR}/log/nginx:/var/log/nginx
+      - ${WORK_DIR}
     depends_on:
       - php-fpm
-      - mysqldb
+      - mariadb
     networks:
       default:
         aliases:
-          - ${NGINX_HOST}
+          - ${APP_HOST}
   php-fpm:
-    build: "./docker/php"
     container_name: ${APP_NAME}_php-fpm
+    build: ${DOCKER_DIR}/php-fpm
+    ports:
+      - "9000:9000"
     volumes:
-      - "./docker/php/conf.d/php.ini:/usr/local/etc/php/conf.d/php.ini"
-      - ".:/var/www/html"
+      - ${WORK_DIR}
     depends_on:
-      - mysqldb
+      - mariadb
     networks:
       - default
-  mysqldb:
-    image: mysql:${MYSQL_VERSION}
-    container_name: ${APP_NAME}_${MYSQL_HOST}
-    environment:
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+  mariadb:
+    container_name: ${APP_NAME}_mariadb
+    image: mariadb:${MARIADB_VERSION}
     ports:
       - "3306:3306"
     volumes:
-      - "./docker/mysql/data/db/mysql:/var/lib/mysql"
-      - "./docker/mysql/conf.d/my.conf:/etc/mysql/conf.d/my.cnf"
-      - ".:/var/www/html"
+      - ${DOCKER_DIR}/mysql/data/db/mysql:/var/lib/mysql
+      #- ${DOCKER_DIR}/mysql/conf.d/my.conf:/etc/mysql/conf.d/my.cnf
+      - ${WORK_DIR}
+    environment:
+      - MYSQL_DATABASE=${MARIADB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - MYSQL_USER=${MARIADB_USER}
+      - MYSQL_PASSWORD=${MARIADB_PASSWORD}
     networks:
       - default
+
 networks:
   default:
     driver: bridge

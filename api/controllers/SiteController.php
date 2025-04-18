@@ -8,6 +8,6 @@ class SiteController extends Controller
 {
     public function actionIndex(): string
     {
-        return 'api';
+        return 'PHP_VERSION: ' . PHP_VERSION;
     }
 }

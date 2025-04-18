@@ -6,27 +6,27 @@ include .env
 all: help
 
 build:
-	@docker-compose up -d --build
+	@docker compose up -d --build
 
 up:
-	@docker-compose up -d
+	@docker compose up -d
 
 stop:
-	@docker-compose stop
+	@docker compose stop
 
 down:
-	@docker-compose down -v
+	@docker compose down -v
 
 restart:
-	@docker-compose restart
+	@docker compose restart
 
 ps:
-	@docker-compose ps
+	@docker compose ps
 
 logs:
-	@docker-compose logs -f
+	@docker compose logs -f
 
-server:
+app:
 	@docker exec -it ${APP_NAME}_php-fpm /bin/bash
 
 help:
