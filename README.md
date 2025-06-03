@@ -72,7 +72,7 @@ Updating currencies from the console
 ```shell
 php yii currency/update
 ```
-CRON
+Cron
 ----------------------
 Updating exchange rate data via Cron
 ```shell
@@ -80,7 +80,8 @@ Updating exchange rate data via Cron
 0 12 * * * /usr/bin/php /var/project/yii currency/update
 ```
 
-## RECTOR
+Rector
+----------------------
 ```bash
 vendor/bin/rector
 vendor/bin/rector process
