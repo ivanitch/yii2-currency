@@ -7,7 +7,7 @@ Run
 -------------------
 Clone a project
 ```shell
-git clone git@github.com:Ivanitch/yii2-currency.git .
+git clone git@github.com:ivanitch/yii2-currency.git .
 ```
 Run the project in docker
 ```shell
@@ -82,7 +82,6 @@ Updating exchange rate data via Cron
 
 ## RECTOR
 ```bash
-#
 vendor/bin/rector
 vendor/bin/rector process
 ```
