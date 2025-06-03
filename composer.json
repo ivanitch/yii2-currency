@@ -25,19 +25,21 @@
         }
     ],
     "require-dev": {
-        "yiisoft/yii2-debug": "~2.1.0",
-        "yiisoft/yii2-gii": "~2.2.0",
-        "yiisoft/yii2-faker": "~2.0.0",
         "codeception/codeception": "^5.0.0 || ^4.0",
         "codeception/lib-innerbrowser": "^4.0 || ^3.0 || ^1.1",
         "codeception/module-asserts": "^3.0 || ^1.1",
-        "codeception/module-yii2": "^1.1",
         "codeception/module-filesystem": "^3.0 || ^2.0 || ^1.1",
+        "codeception/module-yii2": "^1.1",
         "codeception/verify": "^3.0 || ^2.2",
-        "symfony/browser-kit": "^6.0 || >=2.7 <=4.2.4",
-        "symfony/var-dumper": "^6.2",
         "jetbrains/phpstorm-attributes": "^1.0",
         "maglnet/composer-require-checker": "^4.3",
-        "roave/security-advisories": "dev-master"
+        "phpunit/phpunit": "^12.1",
+        "rector/rector": "^2.0",
+        "roave/security-advisories": "dev-master",
+        "symfony/browser-kit": "^6.0 || >=2.7 <=4.2.4",
+        "symfony/var-dumper": "^6.2",
+        "yiisoft/yii2-debug": "~2.1.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.2.0"
     }
 }

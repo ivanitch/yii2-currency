@@ -13,12 +13,8 @@ class SetUp implements BootstrapInterface
     {
         $container = Yii::$container;
 
-        $container->setSingleton(Cache::class, function () use ($app) {
-            return $app->cache;
-        });
+        $container->setSingleton(Cache::class, fn() => $app->cache);
 
-        $container->setSingleton(ManagerInterface::class, function () use ($app) {
-            return $app->authManager;
-        });
+        $container->setSingleton(ManagerInterface::class, fn() => $app->authManager);
     }
 }

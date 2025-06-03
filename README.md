@@ -79,3 +79,11 @@ Updating exchange rate data via Cron
 # Data is automatically updated at 12.00 (Moscow time)
 0 12 * * * /usr/bin/php /var/project/yii currency/update
 ```
+
+## RECTOR
+```bash
+#
+vendor/bin/rector
+vendor/bin/rector process
+```
+

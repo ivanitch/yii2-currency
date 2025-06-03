@@ -6,11 +6,8 @@ use yii\rbac\ManagerInterface;
 
 class RoleManager
 {
-    private $manager;
-
-    public function __construct(ManagerInterface $manager)
+    public function __construct(private ManagerInterface $manager)
     {
-        $this->manager = $manager;
     }
 
     public function assign($userId, $name): void

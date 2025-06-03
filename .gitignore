@@ -36,3 +36,5 @@ phpunit.phar
 /.env
 /docker/mysql/data/
 /docker/log/
+
+/rector.php

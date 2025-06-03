@@ -1,9 +1,24 @@
 include .env
 
+PHPUNIT=./vendor/bin/phpunit
+RECTOR=./vendor/bin/rector
+
 # MySQL
 #MYSQL_DUMPS_DIR=data/db/dumps
 
 all: help
+
+test:
+	$(PHPUNIT) --colors=always
+
+rector:
+	$(RECTOR) process
+
+rector-dry:
+	$(RECTOR) process --dry-run --no-diffs
+
+update:
+	composer update
 
 build:
 	@docker compose up -d --build
@@ -40,4 +55,8 @@ help:
 	@echo "- restart    Restart all containers."
 	@echo "- ps         List containers."
 	@echo "- logs       Follow log output"
-	@echo "- server     Enter your PHP-FPM container.\n"
+	@echo "- server     Enter your PHP-FPM container."
+	@echo "- test       Running PHPUit tests."
+	@echo "- rector     Running Rector."
+	@echo "- rector-dry Launching Rector with changes."
+	@echo "- update     Running composer update."

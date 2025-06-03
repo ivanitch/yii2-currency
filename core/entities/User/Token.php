@@ -34,9 +34,7 @@ class Token extends ActiveRecord
     {
         return [
             'token' => 'token',
-            'expired' => function () {
-                return date(DATE_RFC3339, $this->expired_at);
-            },
+            'expired' => fn() => date(DATE_RFC3339, $this->expired_at),
         ];
     }
 }
