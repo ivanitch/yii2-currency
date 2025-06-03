@@ -2,17 +2,23 @@
 
 namespace core\services;
 
+use yii\base\InvalidConfigException;
 use yii\httpclient\Client;
+use yii\httpclient\Exception;
 
 readonly class SmsService
 {
-    const TEST_KEY = 'XXXXXXXXXXXXYYYYYYYYYYYYZZZZZZZZXXXXXXXXXXXXYYYYYYYYYYYYZZZZZZZZ';
+    const string TEST_KEY = 'XXXXXXXXXXXXYYYYYYYYYYYYZZZZZZZZXXXXXXXXXXXXYYYYYYYYYYYYZZZZZZZZ';
 
+    /**
+     * @throws Exception
+     * @throws InvalidConfigException
+     */
     public function send(string $phone, string $message): void
     {
         $url = "https://smspilot.ru/api.php?send=$message&to=$phone&apikey=" . self::TEST_KEY;
 
-        $client = new Client();
+        $client   = new Client();
         $response = $client->createRequest()
             ->setMethod('GET')
             ->setUrl($url)

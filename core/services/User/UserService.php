@@ -8,8 +8,10 @@ readonly class UserService
 {
     public function __construct(
         private UserRepository $repository,
-        private RoleManager $roles
-    ) {}
+        private RoleManager    $roles
+    )
+    {
+    }
 
     /**
      * @param int $id
