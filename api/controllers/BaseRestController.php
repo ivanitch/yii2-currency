@@ -10,7 +10,7 @@ use yii\web\Response;
 class BaseRestController extends ActiveController
 {
     public $serializer = [
-        'class' => 'yii\rest\Serializer',
+        'class'              => 'yii\rest\Serializer',
         'collectionEnvelope' => 'items',
     ];
 
@@ -23,7 +23,7 @@ class BaseRestController extends ActiveController
     )
     {
         parent::__construct($id, $module, $config);
-        $this->args = Yii::$app->request->queryParams;
+        $this->args     = Yii::$app->request->queryParams;
         $this->response = Yii::$app->getResponse();
     }
 
@@ -35,11 +35,11 @@ class BaseRestController extends ActiveController
         $behaviors = parent::behaviors();
 
         $behaviors['contentNegotiator'] = [
-            'class' => ContentNegotiator::class,
+            'class'       => ContentNegotiator::class,
             'formatParam' => '_format',
-            'formats' => [
+            'formats'     => [
                 'application/json' => Response::FORMAT_JSON,
-                'xml' => Response::FORMAT_XML
+                'xml'              => Response::FORMAT_XML
             ],
         ];
 

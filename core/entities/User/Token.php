@@ -27,13 +27,13 @@ class Token extends ActiveRecord
     public function generateToken($expire): void
     {
         $this->expired_at = $expire;
-        $this->token = \Yii::$app->security->generateRandomString();
+        $this->token      = \Yii::$app->security->generateRandomString();
     }
 
     public function fields(): array
     {
         return [
-            'token' => 'token',
+            'token'   => 'token',
             'expired' => fn() => date(DATE_RFC3339, $this->expired_at),
         ];
     }

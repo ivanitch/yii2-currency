@@ -26,7 +26,7 @@ class AuthController extends Controller
         ];
 
         $behaviors['verbs'] = [
-            'class' => VerbFilter::class,
+            'class'   => VerbFilter::class,
             'actions' => [
                 'auth' => ['post'],
             ],

@@ -8,39 +8,39 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-console',
-    'basePath' => dirname(__DIR__),
-    'bootstrap' => [
+    'id'                  => 'app-console',
+    'basePath'            => dirname(__DIR__),
+    'bootstrap'           => [
         'log',
         SetUp::class
     ],
     'controllerNamespace' => 'console\controllers',
-    'aliases' => [
+    'aliases'             => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
-    'controllerMap' => [
+    'controllerMap'       => [
         'fixture' => [
-            'class' => 'yii\console\controllers\FixtureController',
+            'class'     => 'yii\console\controllers\FixtureController',
             'namespace' => 'common\fixtures',
-          ],
+        ],
         'migrate' => [
-            'class' => 'fishvision\migrate\controllers\MigrateController',
-            'autoDiscover' => true,
+            'class'          => 'fishvision\migrate\controllers\MigrateController',
+            'autoDiscover'   => true,
             'migrationPaths' => [
                 '@vendor/yiisoft/yii2/rbac/migrations',
             ],
         ],
     ],
-    'components' => [
+    'components'          => [
         'log' => [
             'targets' => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class'  => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
             ],
         ]
     ],
-    'params' => $params,
+    'params'              => $params,
 ];

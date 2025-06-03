@@ -8,49 +8,49 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-api',
-    'basePath' => dirname(__DIR__),
+    'id'                  => 'app-api',
+    'basePath'            => dirname(__DIR__),
     'controllerNamespace' => 'api\controllers',
-    'language'=>'ru',
-    'sourceLanguage'=>'ru-RU',
-    'aliases' => [],
-    'bootstrap' => [
+    'language'            => 'ru',
+    'sourceLanguage'      => 'ru-RU',
+    'aliases'             => [],
+    'bootstrap'           => [
         'log'
     ],
-    'modules' => [],
-    'components' => [
-        'request' => [
-            'parsers' => [
+    'modules'             => [],
+    'components'          => [
+        'request'    => [
+            'parsers'             => [
                 'application/json' => 'yii\web\JsonParser',
-                'text/xml' => 'yii\web\XmlParser',
+                'text/xml'         => 'yii\web\XmlParser',
             ],
             'cookieValidationKey' => $params['cookieValidationKey']
         ],
-        'response' => [
+        'response'   => [
             'formatters' => [
                 'json' => [
-                    'class' => 'yii\web\JsonResponseFormatter',
+                    'class'         => 'yii\web\JsonResponseFormatter',
                     // В продакшене рекомендуется закомментировать
-                    'prettyPrint' => YII_DEBUG,
+                    'prettyPrint'   => YII_DEBUG,
                     'encodeOptions' => JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
                 ],
             ],
         ],
-        'user' => [
-            'identityClass' => User::class,
+        'user'       => [
+            'identityClass'   => User::class,
             'enableAutoLogin' => false,
-            'enableSession' => false,
+            'enableSession'   => false,
         ],
-        'log' => [
+        'log'        => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
+            'targets'    => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class'  => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
             ],
         ],
         'urlManager' => require __DIR__ . '/urlManager.php'
     ],
-    'params' => $params,
+    'params'              => $params,
 ];

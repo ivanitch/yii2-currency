@@ -21,8 +21,8 @@ class ProfileController extends Controller
         $behaviors = parent::behaviors();
 
         $behaviors['authenticator']['authMethods'] = [
-              HttpBasicAuth::class,
-              HttpBearerAuth::class,
+            HttpBasicAuth::class,
+            HttpBearerAuth::class,
         ];
 
         $behaviors['access'] = [
@@ -36,7 +36,7 @@ class ProfileController extends Controller
         ];
 
         $behaviors['verbs'] = [
-            'class' => VerbFilter::class,
+            'class'   => VerbFilter::class,
             'actions' => [
                 'index' => ['get'],
             ],

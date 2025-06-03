@@ -35,21 +35,21 @@ class Currency extends ActiveRecord
      * @return self
      */
     public static function add(
-        int $num_code,
+        int    $num_code,
         string $char_code,
-        int $nominal,
+        int    $nominal,
         string $name,
-        float $value,
-        float $rate
+        float  $value,
+        float  $rate
     ): self
     {
-        $model = new static();
-        $model->num_code = $num_code;
+        $model            = new static();
+        $model->num_code  = $num_code;
         $model->char_code = $char_code;
-        $model->nominal = $nominal;
-        $model->name = $name;
-        $model->value = $value;
-        $model->rate = $rate;
+        $model->nominal   = $nominal;
+        $model->name      = $name;
+        $model->value     = $value;
+        $model->rate      = $rate;
 
         return $model;
     }
@@ -58,11 +58,11 @@ class Currency extends ActiveRecord
     {
         parent::afterSave($insert, $changedAttributes);
 
-        $num_code = $this->getAttribute('num_code');
+        $num_code  = $this->getAttribute('num_code');
         $char_code = $this->getAttribute('char_code');
 
         if (self::isDollar($num_code, $char_code)) {
-            $dollarValue = (int) $this->getAttribute('value');
+            $dollarValue = (int)$this->getAttribute('value');
             if ($dollarValue >= self::DOLLAR_MAX_VALUE) {
                 /* @var User $admin */
                 $admin = User::find()->where(['username' => 'admin'])->one();

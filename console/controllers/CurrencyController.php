@@ -14,10 +14,10 @@ class CurrencyController extends Controller
      * @param array $config
      */
     public function __construct(
-                                         $id,
-                                         $module,
+        $id,
+        $module,
         private readonly CurrencyService $service,
-        array                            $config = []
+        array $config = []
     )
     {
         parent::__construct($id, $module, $config);

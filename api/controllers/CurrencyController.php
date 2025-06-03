@@ -11,6 +11,7 @@ use yii\db\ActiveRecord;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
+
 class CurrencyController extends BaseRestController
 {
     /**
@@ -19,10 +20,10 @@ class CurrencyController extends BaseRestController
     public $modelClass = Currency::class;
 
     public function __construct(
-                                         $id,
-                                         $module,
+        $id,
+        $module,
         private readonly CurrencyService $service,
-                                         array $config = []
+        array $config = []
     )
     {
         parent::__construct($id, $module, $config);
@@ -83,10 +84,10 @@ class CurrencyController extends BaseRestController
         ];
 
         $behaviors['verbs'] = [
-            'class' => VerbFilter::class,
+            'class'   => VerbFilter::class,
             'actions' => [
                 'currencies' => ['get'],
-                'currency' => ['get'],
+                'currency'   => ['get'],
             ],
         ];
 

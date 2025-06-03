@@ -35,7 +35,7 @@ class UserRepository
 
     public function existsByPasswordResetToken(string $token): bool
     {
-        return (bool) User::findByPasswordResetToken($token);
+        return (bool)User::findByPasswordResetToken($token);
     }
 
     public function save(User $user): void

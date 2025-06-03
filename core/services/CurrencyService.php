@@ -10,8 +10,10 @@ readonly class CurrencyService
 {
     public function __construct(
         private CurrencyRepository $repository,
-        private CBRAgentService $CBRAgentService
-    ) {}
+        private CBRAgentService    $CBRAgentService
+    )
+    {
+    }
 
     public function addCurrencies(): void
     {

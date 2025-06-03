@@ -80,7 +80,7 @@ class User extends ActiveRecord implements IdentityInterface
 
         return static::findOne([
             'password_reset_token' => $token,
-            'status' => self::STATUS_ACTIVE,
+            'status'               => self::STATUS_ACTIVE,
         ]);
     }
 
@@ -93,7 +93,7 @@ class User extends ActiveRecord implements IdentityInterface
     public static function isPasswordResetTokenValid(string $token): bool
     {
         if (empty($token)) return false;
-        $timestamp = (int) substr($token, strrpos($token, '_') + 1);
+        $timestamp = (int)substr($token, strrpos($token, '_') + 1);
         return $timestamp + 3600 >= time();
     }
 

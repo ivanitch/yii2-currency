@@ -15,27 +15,29 @@ use yii\helpers\ArrayHelper;
 class RoleController extends Controller
 {
     public function __construct(
-                                     $id,
-                                     $module,
+        $id,
+        $module,
         private readonly UserService $service,
-        array                        $config = [])
+        array $config = [])
     {
         parent::__construct($id, $module, $config);
     }
+
     /**
      * Adds role to user
      */
     public function actionAssign(): void
     {
         $username = $this->prompt('Username:', ['required' => true]);
-        $user = $this->findModel($username);
-        $role = $this->select(
+        $user     = $this->findModel($username);
+        $role     = $this->select(
             'Role:',
             ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'description')
         );
         $this->service->assignRole($user->id, $role);
         $this->stdout('Done!' . PHP_EOL);
     }
+
     private function findModel($username): User
     {
         if (!$model = User::findOne(['username' => $username])) {

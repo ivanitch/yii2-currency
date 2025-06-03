@@ -3,5 +3,5 @@
 namespace core\access;
 class Rbac
 {
-    const ROLE_ADMIN = 'admin';
+    const string ROLE_ADMIN = 'admin';
 }

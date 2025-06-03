@@ -12,7 +12,7 @@ use RuntimeException;
  */
 class CBRAgentService
 {
-    const URL = 'http://www.cbr.ru/scripts/XML_daily.asp?date_req=';
+    const string URL = 'http://www.cbr.ru/scripts/XML_daily.asp?date_req=';
 
     protected array $list;
 
@@ -24,7 +24,7 @@ class CBRAgentService
         $xml = new DOMDocument();
         $url = self::URL . date('d.m.Y');
         if ($xml->load($url)):
-            $root = $xml->documentElement;
+            $root  = $xml->documentElement;
             $items = $root->getElementsByTagName('Valute');
             foreach ($items as $item):
                 $num_code  = self::getElement($item, 'NumCode');
@@ -35,12 +35,12 @@ class CBRAgentService
                 $rate      = self::getElement($item, 'VunitRate');
 
                 $this->list[$num_code] = [
-                    'num_code' => (int) $num_code,
+                    'num_code'  => (int)$num_code,
                     'char_code' => $char_code,
-                    'nominal' => (int) $nominal,
-                    'name' => $name,
-                    'value' => self::format($value),
-                    'rate' => self::format($rate),
+                    'nominal'   => (int)$nominal,
+                    'name'      => $name,
+                    'value'     => self::format($value),
+                    'rate'      => self::format($rate),
                 ];
             endforeach;
         else:

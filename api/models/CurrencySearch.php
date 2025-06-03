@@ -38,13 +38,13 @@ class CurrencySearch extends Model
         $query = Currency::find();
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-            'sort' => [
+            'query'      => $query,
+            'sort'       => [
                 'defaultOrder' => ['num_code' => SORT_ASC]
             ],
             'pagination' => [
-                'pageSize' => Yii::$app->params['pageSize'],
-                'pageParam' => 'page',
+                'pageSize'       => Yii::$app->params['pageSize'],
+                'pageParam'      => 'page',
                 'forcePageParam' => false,
                 'pageSizeParam'  => false,
                 'validatePage'   => false,
